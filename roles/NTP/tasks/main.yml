@@ -1,0 +1,11 @@
+- name: Installing the Chrony on Server
+  apt:
+    name: chrony
+    state: present
+    update_cache: yes
+
+- name: Restart and Enable the chrony
+  service:
+    name: chrony.service
+    state: restarted
+    enabled: yes
